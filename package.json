@@ -1,0 +1,18 @@
+{
+  "name": "voynich",
+  "version": "0.1.0",
+  "description": "Library and command-line tool to analyze the Voynich manuscript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "voynich",
+    "text"
+  ],
+  "author": "Jason M Baker <amnorvend@gmail.com>",
+  "license": "LGPL",
+  "dependencies": {
+    "vows": "^0.8.1"
+  }
+}
