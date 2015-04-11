@@ -4,7 +4,10 @@
   "description": "Library and command-line tool to analyze the Voynich manuscript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
+  },
+  "bin": {
+    "vch": "./script.js"
   },
   "keywords": [
     "voynich",
@@ -16,7 +19,6 @@
     "minimist": "^1.1.1",
     "q": "^1.2.0",
     "string-template": "^0.2.0",
-    "vows": "^0.8.1",
-    "yargs": "^3.6.0"
+    "vows": "^0.8.1"
   }
 }
