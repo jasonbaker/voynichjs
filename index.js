@@ -3,9 +3,6 @@ var fs = require('fs'),
     format = require('string-template'),
     util = require('util');
 
-var REGEX = /^<f(\w{1,2})[r|v]\.([X|P]\d?)\.?(\d*);H>\s+(.*)$/;
-var folios = ['75', '76', '77', '78', '79', '80', '81', '82', '83', '84']
-
 exports.extractText = function(varsObj) {
   varsObj = mergeVarsObj(varsObj);
   var regex = regexBuilder(varsObj);
