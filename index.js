@@ -14,6 +14,9 @@ exports.extractText = function(varsObj) {
   var strippedTextLines = selectedLines.map(function(val) {
     return val.match(regex)[5];
   });
+
+  // VOMIT: This is horrendously repetitive, and it seems like some kind of
+  // pipeline/monad waiting to happen.
   var fullText = strippedTextLines.join('\n');
   fullText = fullText.split('.').join(' ').replace(/\!/g, '');
   fullText = fullText.replace(/=/g, '\n');
