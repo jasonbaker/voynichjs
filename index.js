@@ -42,7 +42,7 @@ var varsObjDefaults = {
   transcriber: 'H',
 
   // Transcript included in bundle
-  fname: './voynich.txt'
+  fname: __dirname + '/voynich.txt'
 };
 
 function mergeVarsObj(varsObj) {
