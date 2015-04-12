@@ -6,6 +6,9 @@ var fs = require('fs'),
 exports.extractText = function(varsObj) {
   varsObj = mergeVarsObj(varsObj);
   var regex = regexBuilder(varsObj);
+  if (varsObj.verbose) {
+    console.log('Using regex: ' + regex);
+  }
   // Yes I'm synchronously slurping a text file. Sue me.
   var splitLines = fs.readFileSync(varsObj.fname, {encoding: 'utf8'}).split('\n');
   var selectedLines = splitLines.filter(function(val) { 
