@@ -1,6 +1,6 @@
 {
   "name": "voynich",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Library and command-line tool to analyze the Voynich manuscript.",
   "main": "index.js",
   "scripts": {
