@@ -43,7 +43,7 @@ var varsObjDefaults = {
 
   // Transcript included in bundle
   fname: './voynich.txt'
-}
+};
 
 function mergeVarsObj(varsObj) {
   var newObj = util._extend({}, varsObjDefaults);
