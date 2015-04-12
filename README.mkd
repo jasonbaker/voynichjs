@@ -1,1 +1,127 @@
 [![Build Status](https://travis-ci.org/jasonbaker/voynich.svg?branch=master)](https://travis-ci.org/jasonbaker/voynich)
+
+This package includes utilities for reading the Voynich Manuscript. It embeds 
+the Voynich interlinear transcript. It has two modes of operation: command-line
+and library.
+
+# Installation
+Voynich is written in [node.js](https://nodejs.org), and can be installed via [npm](https://www.npmjs.com). To install these packages, see the below documentation:
+
+* [Installing node.js via a package manager](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
+* [How to install npm](http://blog.npmjs.org/post/85484771375/how-to-install-npm)
+
+Once you've installed node and npm, you may install voynich by running the following command:
+
+    npm install -g voynich
+
+# Command-line mode
+Voynich includes a `vch` command-line tool. To get the text of all paragraphs, you may run the command by itself:
+
+    vch
+    
+    # Yields:
+    fachys ykal ar ataiin shol shory cthres y kor sholdy
+    sory ckhar or y kair chtaiin shar are cthar cthar dan
+    syaiir sheky or ykaiin shod cthoary cthes daraiin sa
+    ooiin oteey oteos roloty cth*ar daiin otaiin or okan
+    ...
+    
+You may extract the text of a specific folio using the `--folio` flag:
+
+    vch --folio=f2v
+    
+    kooiin cheo pchor otaiin o dain chor dair shty
+    kcho kchy sho shol qotcho loeees qoty chor daiin
+    otchy chor lshy chol chody chodain chcthy daiin
+    sho cholo cheor chodaiin
+
+    kchor shy daiiin chckhoy s shey dor chol daiin
+    dor chol chor chol keol chy chty daiin otchor chan
+    daiin chotchey qoteeey chokeos chees chr cheaiin
+    chokoishe chor cheol chol dolody
+    
+The input of the folio command is a regular expression. Thus, you print the text of both f2r and f2v:
+
+    vch --folio='f2[v|r]'
+    
+    kydainy ypchol daiin otchal
+    dorchory shor cthy cth
+    qotaiin chaiin
+    chaindy chokaiin d
+    otochor al ytchaiin dan
+    saiin daind dchol dchy cthy
+    shor ckhy daiiny chol dan
+
+    kydain shaiin qoy s shol fodan yksh olsheey daiildy
+    dlssho kol sheey qokey ykody so chol yky dain daiirol
+    qoky cholaiin shol sheky daiin cthey keol saiin saiin
+    ychain dal chy dalor shan dan olsaiin sheey ckhor
+    okol chy chor cthor yor an chan saiin chety chyky sal
+    sho ykeey chey daiin chcthy
+
+    kooiin cheo pchor otaiin o dain chor dair shty
+    kcho kchy sho shol qotcho loeees qoty chor daiin
+    otchy chor lshy chol chody chodain chcthy daiin
+    sho cholo cheor chodaiin
+
+    kchor shy daiiin chckhoy s shey dor chol daiin
+    dor chol chor chol keol chy chty daiin otchor chan
+    daiin chotchey qoteeey chokeos chees chr cheaiin
+    chokoishe chor cheol chol dolody
+    
+By default, the text displayed is from Paragraphs (P). You may also select other locators as well (L for labels as well as some other codes).
+
+    vch --lineType='L\d?'
+    
+    # Some one-letter entries
+    otaim dam alam
+
+    rary
+
+    rals
+
+    qor
+
+    dara
+
+    ykcol
+
+    syly
+    ...
+    
+# Library mode
+You may also use voynich as a library. It supports all the same operations as the command-line mode:
+
+    var voynich = require('voynich');
+
+    console.log(voynich.extractText({folio: 'f1r'}));
+    
+    // outputs
+    
+    fachys ykal ar ataiin shol shory cthres y kor sholdy
+    sory ckhar or y kair chtaiin shar are cthar cthar dan
+    syaiir sheky or ykaiin shod cthoary cthes daraiin sa
+    ooiin oteey oteos roloty cth*ar daiin otaiin or okan
+    dair y chear cthaiin cphar cfhaiin
+
+    * odar o y shol cphoy oydar sh s cfhoaiin shodary
+    yshey shody okchoy otchol chocthy oschy dain chor kos
+    daiin shos cfhol shody
+
+    * ydain cphesaiin ol s cphey ytain shoshy cphodales
+    oksho kshoy otairin oteol okan shodain sckhey daiin
+	shoy ckhey kodaiin cphy cphodaiils cthey she oldain d
+	dain oiin chol odaiin chodain chdy okain dan cthy kod
+	daiin shckhey ckeor chor shey kol chol chol kor chal
+	sho chol shodan kshy kchy dor chodaiin sho kchom
+	ycho tchey chokain sheo pshol dydyd cthy daicthy
+	yto shol she kodshey cphealy dasain dain ckhyds
+	dchar shcthaiin okaiir chey rchy potol cthols dlocta
+	shok chor chey dain ckhey
+	
+	cpho shaiin shokcheey chol tshodeesy shey pydeey chy ro d*
+	*doin chol dain cthal dar shear kaiin dar shey cthar
+	cho*o kaiin shoaiin okol daiin far cthol daiin ctholdar
+	ycheey okay oky daiin okchey kokaiin **chol k**chy dal
+	d*eeo shody koshey cthy okchey keey keey dal chtor
+	*eo chol chok choty chotey
