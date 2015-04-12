@@ -30,7 +30,7 @@ exports.extractText = function(varsObj) {
 
 var varsObjDefaults = {
   // Matches any folio
-  folio: '\\w{1,2}[r|v]',
+  folio: 'f\\w{1,2}[r|v]',
 
   // Matches paragraphs
   lineType: 'P\\d?',
@@ -51,6 +51,6 @@ function mergeVarsObj(varsObj) {
 }
 
 function regexBuilder(varsObj) {
-  var regexTemplate = '^<f({folio})\\.({lineType})\\.({lineIdentifier});({transcriber})>\\s+(.*)$';
+  var regexTemplate = '^<({folio})\\.({lineType})\\.({lineIdentifier});({transcriber})>\\s+(.*)$';
   return new RegExp(format(regexTemplate, varsObj));
 }
