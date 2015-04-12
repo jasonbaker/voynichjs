@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 var voynich = require('./index.js'),
     minimist = require('minimist');
 
