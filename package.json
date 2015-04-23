@@ -21,5 +21,9 @@
     "q": "^1.2.0",
     "string-template": "^0.2.0",
     "vows": "^0.8.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "line-reader": "^0.2.4"
   }
 }
