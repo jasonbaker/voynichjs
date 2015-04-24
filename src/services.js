@@ -3,8 +3,8 @@ var services = {};
 
 exports.get = function(key) {
   if (!services[key]) {
-    var constructor = constructors[key][0],
-        deps = constructors[key][1];
+    var constructor = constructors[key],
+        deps = constructor.deps || [];
     services[key] = new constructor();
     deps.forEach(function(dep) {
       services[key][dep] = exports.get.bind({}, dep);
@@ -13,8 +13,8 @@ exports.get = function(key) {
   return services[key];
 };
 
-exports.put = function(key, deps, constructor) {
-  constructors[key] = [constructor, deps];
+exports.put = function(key, constructor) {
+  constructors[key] = constructor;
 };
 
 exports.clear = function() {

@@ -7,7 +7,7 @@ describe('Services module', function() {
 
   it('works', function() {
     var callCount = 0;
-    svc.put('foo', [], function() {
+    svc.put('foo', function() {
       callCount++;
       this.foo = 'bar';
     });
@@ -19,8 +19,10 @@ describe('Services module', function() {
   });
 
   it('allows dependencies', function() {
-    svc.put('foo', [], function() {});
-    svc.put('baz', ['foo'], function() {});
+    svc.put('foo', function() {});
+    function baz() {}
+    baz.deps = ['foo'];
+    svc.put('baz', baz);
 
     expect(svc.get('baz').foo()).toBe(svc.get('foo'));
   });
