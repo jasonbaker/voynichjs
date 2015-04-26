@@ -11,6 +11,8 @@ exports.deps = ['gulpopts'];
 exports.prototype.ensureSchema = function() {
   this.db.run(
     'CREATE TABLE voynichline(id INTEGER PRIMARY KEY, page, chunklocator, linelocator, transcriber, text)');
+  this.db.run('CREATE INDEX voynichline_page on voynichline(page)');
+  this.db.run('CREATE INDEX voynichline_transcriber on voynichline(transcriber)');
 };
 
 exports.prototype.persist = function() {
