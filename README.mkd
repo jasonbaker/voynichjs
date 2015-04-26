@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/jasonbaker/voynich.svg?branch=master)](https://travis-ci.org/jasonbaker/voynich)
+[![Build Status](https://travis-ci.org/jasonbaker/voynich.svg?branch=master)](https://travis-ci.org/jasonbaker/voynichjs)
 
 This package includes utilities for reading the Voynich Manuscript. It embeds 
 the Voynich interlinear transcript. It has two modes of operation: command-line
@@ -12,7 +12,7 @@ Voynich is written in [node.js](https://nodejs.org), and can be installed via [n
 
 Once you've installed node and npm, you may install voynich by running the following command:
 
-    npm install -g voynich
+    npm install -g voynichjs
 
 # Command-line mode
 Voynich includes a `vch` command-line tool. To get the text of all paragraphs, you may run the command by itself:
