@@ -1,12 +1,12 @@
 var gulp = require('gulp'),
     jasmine = require('gulp-jasmine'),
-    minimist = require('minimist');
+    svc = require('./src/services.js');
 
-var argv = minimist(process.argv.slice(2), {
-  default: {
-    dbpath: 'bin/vch.db',
-    srcpath: './voynich.txt',
-  }
+require('./src/gulpservices.js');
+
+gulp.task('dbgen', function() {
+  var gen = svc.get('dbgen');
+  gen.run();
 });
 
 gulp.task('test', function() {

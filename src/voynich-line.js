@@ -21,4 +21,12 @@ VoynichTextLine.prototype.lineNo = function() {
   return this.match_[3];
 };
 
+VoynichTextLine.prototype.transcriber = function() {
+  return this.match_[4];
+}
+
+VoynichTextLine.prototype.text = function() {
+  return this.match_[5];
+}
+
 exports.VoynichTextLine = VoynichTextLine;

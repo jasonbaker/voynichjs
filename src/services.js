@@ -5,10 +5,11 @@ exports.get = function(key) {
   if (!services[key]) {
     var constructor = constructors[key],
         deps = constructor.deps || [];
-    services[key] = new constructor();
     deps.forEach(function(dep) {
-      services[key][dep] = exports.get.bind({}, dep);
+      constructor.prototype[dep] = exports.get.bind({}, dep);
     });
+    services[key] = new constructor();
+
   }
   return services[key];
 };
