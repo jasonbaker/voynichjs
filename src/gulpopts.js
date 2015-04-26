@@ -8,5 +8,4 @@ var exports = module.exports = function() {
       srcpath: './voynich.txt',
     }
   }));
-  console.log(this);
 };
