@@ -9,20 +9,6 @@ var exports = module.exports = function() {
 exports.deps = ['gulpopts'];
 
 exports.prototype.ensureSchema = function() {
-  // // This table serves one purpose: to preserve ordering, which isn't
-  // // lexicographical.
-  // this.db.run('CREATE TABLE pagesorder(id INTEGER PRIMARY KEY, page UNIQUE)');
-
-  // this.db.run(
-  //   'CREATE TABLE parseablemeta(page PRIMARY KEY, key, value)');
-  // this.db.run(
-  //   'CREATE INDEX parseablemeta_keyvalue on parseablemeta(key, value)');
-
-  // this.db.run(
-  //   'CREATE TABLE chunkorder(id INTEGER PRIMARY KEY, page, chunklocator)'); 
-  // this.db.run(
-  //   'CREATE INDEX pagechunk_locator on chunkorder(chunklocator)');
-
   this.db.run(
     'CREATE TABLE voynichline(id INTEGER PRIMARY KEY, page, chunklocator, linelocator, transcriber, text)');
 };
