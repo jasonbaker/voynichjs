@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/jasonbaker/voynich.svg?branch=master)](https://travis-ci.org/jasonbaker/voynichjs)
+[![Build Status](https://travis-ci.org/jasonbaker/voynichjs.svg?branch=master)](https://travis-ci.org/jasonbaker/voynichjs)
 
 This package includes utilities for reading the Voynich Manuscript. It embeds 
 the Voynich interlinear transcript. It has two modes of operation: command-line
