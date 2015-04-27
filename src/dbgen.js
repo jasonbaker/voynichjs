@@ -2,7 +2,7 @@ var lineReader = require('line-reader'),
     voynichLine = require('./voynich-line.js');
 
 function Generator() {}
-Generator.deps = ['gulpopts', 'foliomodel', 'db']
+Generator.deps = ['gulpopts', 'foliomodel', 'db'];
 
 Generator.prototype.run = function() {
   this.db().ensureSchema();
@@ -14,7 +14,7 @@ Generator.prototype.run = function() {
     } 
   })
   .then(function() {
-    self.db().persist(); 
+    self.db().persist();
   });
 };
 
