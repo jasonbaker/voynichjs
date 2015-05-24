@@ -39,7 +39,7 @@ function processLine(line) {
 
 var varsObjDefaults = {
   // Matches any folio
-  folio: 'f\\w{1,3}[r|v]\d?',
+  folio: 'f\\d{1,3}[rv]\\d?',
 
   // Matches paragraphs
   lineType: 'P\\d?',

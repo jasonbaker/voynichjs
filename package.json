@@ -1,6 +1,6 @@
 {
   "name": "voynichjs",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Library and command-line tool to analyze the Voynich manuscript.",
   "repository": "https://github.com/jasonbaker/voynichjs.git",
   "main": "index.js",
