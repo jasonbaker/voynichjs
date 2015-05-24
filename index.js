@@ -30,7 +30,7 @@ exports.extractText = function(varsObj) {
 
 var varsObjDefaults = {
   // Matches any folio
-  folio: 'f\\w{1,2}[r|v]',
+  folio: 'f\\w{1,3}[r|v]\d?',
 
   // Matches paragraphs
   lineType: 'P\\d?',
